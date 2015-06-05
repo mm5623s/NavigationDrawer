@@ -17,10 +17,9 @@
 <resources>
     <string name="app_name">Navigation Drawer Example</string>
     <string-array name="navdrawer_array">
-        <item>Map</item>
-        <item>Navigation</item>
-        <item>Search</item>
-        <item>Layers</item>
+        <item>Map - WebView</item>
+        <item>Navigatin Dialog</item>
+        <item>Map - osmdroid</item>
     </string-array>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>

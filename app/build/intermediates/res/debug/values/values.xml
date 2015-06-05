@@ -10,10 +10,9 @@
         <item>01 C 05</item>
     </string-array>
     <string-array name="navdrawer_array">
-        <item>Map</item>
-        <item>Navigation</item>
-        <item>Search</item>
-        <item>Layers</item>
+        <item>Map - WebView</item>
+        <item>Navigatin Dialog</item>
+        <item>Map - osmdroid</item>
     </string-array>
     <string name="action_websearch">Web search</string>
     <string name="app_name">Navigation Drawer Example</string>

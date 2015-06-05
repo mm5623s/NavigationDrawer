@@ -16,8 +16,6 @@
 
 package com.example.android.navigationdrawerexample;
 
-import java.util.Locale;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.Fragment;
@@ -37,13 +35,19 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import org.osmdroid.api.IMapController;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.MapView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This example illustrates a common usage of the DrawerLayout widget
@@ -81,6 +85,10 @@ public class MainActivity extends Activity {
     private CharSequence mTitle;
     private String[] mNavigationDrawerTitles;
 
+    CustomDrawerAdapter adapter;
+
+    List<DrawerItem> dataList;
+
     private MyWebView mMyWebView;
 
     final Context context = this;
@@ -95,11 +103,19 @@ public class MainActivity extends Activity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
+        dataList = new ArrayList<DrawerItem>();
+        dataList.add(new DrawerItem("Map - WebView", R.drawable.ic_map));
+        dataList.add(new DrawerItem("Navigation", R.drawable.ic_navigation));
+        dataList.add(new DrawerItem("Map - osmdroid", R.drawable.ic_layers));
+
+        adapter = new CustomDrawerAdapter(this, R.layout.custom_drawer_item, dataList);
+        mDrawerList.setAdapter(adapter);
+
         // set a custom shadow that overlays the main content when the drawer opens
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
         // set up the drawer's list view with items and click listener
-        mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.drawer_list_item, mNavigationDrawerTitles));
+        // mDrawerList.setAdapter(new ArrayAdapter<String>(this,
+        //        R.layout.drawer_list_item, mNavigationDrawerTitles));
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
         // enable ActionBar app icon to behave as action to toggle nav drawer
@@ -183,7 +199,7 @@ public class MainActivity extends Activity {
 
     private void selectItem(int position) {
 
-        Fragment fragment;
+        Fragment fragment = null;
         FragmentManager fragmentManager;
 
         if(position==1) {
@@ -196,18 +212,10 @@ public class MainActivity extends Activity {
                 args.putString(MapFragment.URL, "http://www.openstreetmap.org/#map=18/50.93699/6.37461");
                 fragment.setArguments(args);
             } else if(position==2) {
-                fragment = new MapFragment();
-                Bundle args = new Bundle();
-                args.putString(MapFragment.URL, "https://testsystem.navi.fh-aachen.de/");
-                fragment.setArguments(args);
+                fragment = new OSMDroidMapFragment();
             }
             else {
 
-                // update the main content by replacing fragments
-                fragment = new PlanetFragment();
-                Bundle args = new Bundle();
-                args.putInt(PlanetFragment.ARG_PLANET_NUMBER, position);
-                fragment.setArguments(args);
             }
 
             fragmentManager = getFragmentManager();
@@ -245,31 +253,6 @@ public class MainActivity extends Activity {
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
-    /**
-     * Fragment that appears in the "content_frame", shows a planet
-     */
-    public static class PlanetFragment extends Fragment {
-        public static final String ARG_PLANET_NUMBER = "planet_number";
-
-        public PlanetFragment() {
-            // Empty constructor required for fragment subclasses
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_planet, container, false);
-            int i = getArguments().getInt(ARG_PLANET_NUMBER);
-            String planet = getResources().getStringArray(R.array.navdrawer_array)[i];
-
-            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
-                            "drawable", getActivity().getPackageName());
-            ((ImageView) rootView.findViewById(R.id.image)).setImageResource(imageId);
-            getActivity().setTitle(planet);
-            return rootView;
-        }
-    }
-
     public static class MapFragment extends Fragment {
         public static final String URL = "url";
 
@@ -291,17 +274,28 @@ public class MainActivity extends Activity {
         }
     }
 
-    public static class SearchFragment extends Fragment {
-        public SearchFragment() {
+    public static class OSMDroidMapFragment extends Fragment {
+
+        public OSMDroidMapFragment() {
 
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_osmdroidmap, container, false);
 
-            View rootView = inflater.inflate(R.layout.fragment_search, container, false);
+            MapView map = (MapView) rootView.findViewById(R.id.osmdroid_map);
 
+            map.setBuiltInZoomControls(true);
+            map.setMultiTouchControls(true);
+
+            IMapController mapController = map.getController();
+            mapController.setZoom(18);
+            GeoPoint startPoint = new GeoPoint(50.93699, 6.37461);
+            mapController.setCenter(startPoint);
+
+            return rootView;
         }
     }
 
