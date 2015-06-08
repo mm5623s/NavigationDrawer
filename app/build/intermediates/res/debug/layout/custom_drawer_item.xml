@@ -18,6 +18,7 @@
 
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:minHeight="55dp"
             >
 
@@ -49,4 +50,4 @@
 
     </LinearLayout>
 
-</RelativeLayout><!-- From: file:/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/custom_drawer_item.xml -->
+</RelativeLayout><!-- From: file:/C:/Users/User/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/custom_drawer_item.xml -->

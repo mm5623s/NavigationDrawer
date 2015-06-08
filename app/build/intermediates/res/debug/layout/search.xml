@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:dividerPadding="10dp"
+    android:orientation="vertical" >
+
+    <SearchView
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:queryHint="@string/search_hint"
+    xmlns:android="http://schemas.android.com/apk/res/android" />
+
+    <TextView
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="01 C 01"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Herr Mustermann"/>
+
+    <TextView
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="01 C 02"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Frau Mustermann, Herr Placeholder"/>
+
+    <TextView
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="01 C 03"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Herr Kraft, Herr Schreiber, Herr Baumgarten"/>
+</LinearLayout><!-- From: file:/C:/Users/User/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/search.xml -->

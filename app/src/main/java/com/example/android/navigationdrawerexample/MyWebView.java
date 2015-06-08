@@ -12,7 +12,7 @@ import android.webkit.WebView;
  */
 public class MyWebView extends WebView {
     Paint paint = new Paint();
-    private boolean drawPath = false;
+    private int drawPath = 0;
 
     public MyWebView(Context context) {
         super(context);
@@ -34,11 +34,11 @@ public class MyWebView extends WebView {
         paint.setColor(Color.BLUE);
     }
 
-    public boolean getDraPath() {
+    public int getDraPath() {
         return drawPath;
     }
 
-    public void setDrawPath(boolean drawPath) {
+    public void setDrawPath(int drawPath) {
         this.drawPath = drawPath;
     }
 
@@ -47,12 +47,23 @@ public class MyWebView extends WebView {
 
         super.onDraw(canvas);
 
-        if(drawPath) {
-            canvas.drawLine(0, 0, 50, 50, paint);
-            canvas.drawLine(50, 50, 100, 50, paint);
-            canvas.drawLine(100, 50, 150, 150, paint);
-            canvas.drawLine(150, 150, 200, 100, paint);
-            canvas.drawLine(200, 100, 250, 300, paint);
+        switch (Integer.valueOf(drawPath)) {
+            case 1:
+                canvas.drawLine(0, 0, 50, 50, paint);
+                canvas.drawLine(50, 50, 100, 50, paint);
+                canvas.drawLine(100, 50, 150, 150, paint);
+                canvas.drawLine(150, 150, 200, 100, paint);
+                canvas.drawLine(200, 100, 250, 300, paint);
+                break;
+            case 2:
+                canvas.drawLine(200, 200, 250, 250, paint);
+                canvas.drawLine(250, 250, 300, 250, paint);
+                canvas.drawLine(300, 250, 350, 350, paint);
+                canvas.drawLine(350, 350, 400, 300, paint);
+                canvas.drawLine(400, 300, 450, 500, paint);
+                break;
+            default:
+                break;
         }
 
         invalidate();
