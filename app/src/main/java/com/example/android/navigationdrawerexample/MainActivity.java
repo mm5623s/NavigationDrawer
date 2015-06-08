@@ -222,6 +222,8 @@ public class MainActivity extends Activity {
             // fragmentManager = getFragmentManager();
             // fragmentManager.beginTransaction().replace(android.R.id.content, cursorLoaderListFragment).commit();
             startSearchActivity();
+        } else if (position==4) {
+            startNavigationActivity();
         }
         else {
 
@@ -242,6 +244,11 @@ public class MainActivity extends Activity {
             setTitle(mNavigationDrawerTitles[position]);
             mDrawerLayout.closeDrawer(mDrawerList);
         }
+    }
+
+    private void startNavigationActivity() {
+        Intent intent = new Intent(this, NavigationActivity.class);
+        startActivity(intent);
     }
 
     private void startSearchActivity() {
