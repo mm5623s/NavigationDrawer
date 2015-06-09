@@ -30,6 +30,7 @@ import android.content.Loader;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -53,9 +54,12 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 import org.osmdroid.api.IMapController;
-import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.tileprovider.MapTileProviderBasic;
+import org.osmdroid.tileprovider.tilesource.ITileSource;
+import org.osmdroid.tileprovider.tilesource.XYTileSource;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.TilesOverlay;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -102,11 +106,24 @@ public class MainActivity extends Activity {
 
     private MyWebView mMyWebView;
 
-    final Context context = this;
+    public static Context getAppContext() {
+        return MainActivity.appContext;
+    }
+
+    public static Context getBContext() {
+        return MainActivity.bContext;
+    }
+
+    private static Context appContext;
+    private static Context bContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        MainActivity.appContext = getApplicationContext();
+        MainActivity.bContext = this.getBaseContext();
+
         setContentView(R.layout.activity_main);
 
         mTitle = mDrawerTitle = getTitle();
@@ -226,7 +243,6 @@ public class MainActivity extends Activity {
             startNavigationActivity();
         }
         else {
-
             if(position==0) {
                 fragment = new MapFragment();
                 Bundle args = new Bundle();
@@ -298,7 +314,8 @@ public class MainActivity extends Activity {
             MyWebView webViewMap = (MyWebView) rootView.findViewById(R.id.map);
 
             webViewMap.getSettings().setJavaScriptEnabled(true);
-            webViewMap.loadUrl(url);
+//            webViewMap.loadUrl(url);
+            webViewMap.loadUrl("https://testsystem.navi.fh-aachen.de/");
 
             return webViewMap;
         }
@@ -315,17 +332,30 @@ public class MainActivity extends Activity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_osmdroidmap, container, false);
 
-            MapView map = (MapView) rootView.findViewById(R.id.osmdroid_map);
-
-            map.setTileSource(TileSourceFactory.MAPQUESTOSM);
+            //MapView map = (MapView) rootView.findViewById(R.id.osmdroid_map);
+            final MapView map = new MapView(MainActivity.getAppContext(), 256);
 
             map.setBuiltInZoomControls(true);
             map.setMultiTouchControls(true);
+            map.setMaxZoomLevel(25);
 
             IMapController mapController = map.getController();
             mapController.setZoom(18);
-            GeoPoint startPoint = new GeoPoint(52370816, 9735936);
+            GeoPoint startPoint = new GeoPoint(50.93999, 6.37061);
             mapController.setCenter(startPoint);
+
+            final MapTileProviderBasic tileProvider = new MapTileProviderBasic(MainActivity.getAppContext());
+            final ITileSource tileSource = new XYTileSource("FH Juelich", null, 16, 25, 256, ".png",
+                    new String[]{"https://testsystem.navi.fh-aachen.de/osm_tiles/"});
+            tileProvider.setTileSource(tileSource);
+            final TilesOverlay tilesOverlay = new TilesOverlay(tileProvider, MainActivity.getBContext());
+            tilesOverlay.setLoadingBackgroundColor(Color.TRANSPARENT);
+//            map.getOverlays().clear();
+//            map.getOverlays().add(tilesOverlay);
+
+            map.setTileSource(tileSource);
+
+            // map.setTileSource(TileSourceFactory.MAPQUESTOSM);
 
             return map;
         }
@@ -451,7 +481,7 @@ public class MainActivity extends Activity {
     public void createCustomDialog() {
 
         // custom dialog
-        final Dialog dialog = new Dialog(context);
+        final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.navigation_dialog);
 
         Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
