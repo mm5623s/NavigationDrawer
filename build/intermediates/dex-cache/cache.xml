@@ -2,11 +2,25 @@
 <items version="2" >
 
     <item
+        jar="/home/mm5623s/.gradle/caches/modules-2/files-2.1/org.osmdroid/osmdroid-android/4.2/f3a0c73a9ed04a5d0959789c53da9f08462bfcc2/osmdroid-android-4.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f3a0c73a9ed04a5d0959789c53da9f08462bfcc2">
+        <dex dex="/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/build/intermediates/pre-dexed/debug/osmdroid-android-4.2-f7e62804a8557450c9483e3a5f40452f890fb45c.jar" />
+    </item>
+    <item
         jar="/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
         <dex dex="/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-81f6b38e7ad84f8aa0ab655c7afc0b95dd3719eb.jar" />
+    </item>
+    <item
+        jar="/home/mm5623s/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.6.1/58e59bfb3e247097b8122243b3bfe0049c8cfae8/slf4j-simple-1.6.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="58e59bfb3e247097b8122243b3bfe0049c8cfae8">
+        <dex dex="/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/build/intermediates/pre-dexed/debug/slf4j-simple-1.6.1-4f71f5aebb46dd08b995610d994299fa4512e20e.jar" />
     </item>
     <item
         jar="/home/mm5623s/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
@@ -21,6 +35,13 @@
         revision="22.0.1"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
         <dex dex="/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/build/intermediates/pre-dexed/debug/classes-f4f284d63e1e5a54375c2421050824f46d9c0210.jar" />
+    </item>
+    <item
+        jar="/home/mm5623s/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.6.1/6f3b8a24bf970f17289b234284c94f43eb42f0e4/slf4j-api-1.6.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6f3b8a24bf970f17289b234284c94f43eb42f0e4">
+        <dex dex="/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/build/intermediates/pre-dexed/debug/slf4j-api-1.6.1-b3fec667f31c3c0357ea976fd063bcb3d113806f.jar" />
     </item>
 
 </items>

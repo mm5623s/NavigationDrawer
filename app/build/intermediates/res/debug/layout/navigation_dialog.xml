@@ -27,4 +27,4 @@
         android:layout_marginRight="5dp"
         android:layout_below="@+id/navigationDestinationSpinner"
         />
-</RelativeLayout><!-- From: file:/C:/Users/User/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/navigation_dialog.xml -->
+</RelativeLayout><!-- From: file:/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/src/main/res/layout/navigation_dialog.xml -->
