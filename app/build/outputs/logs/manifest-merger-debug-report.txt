@@ -67,7 +67,7 @@ MERGED from com.android.support:support-v4:21.0.3:16:5
 		ADDED from AndroidManifest.xml:39:9
 	android:theme
 		ADDED from AndroidManifest.xml:41:9
-activity#com.example.android.navigationdrawerexample.MainActivity
+activity#com.example.android.indoornavigation.activities.MainActivity
 ADDED from AndroidManifest.xml:42:9
 	android:label
 		ADDED from AndroidManifest.xml:44:13
@@ -83,7 +83,7 @@ category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:48:17
 	android:name
 		ADDED from AndroidManifest.xml:48:27
-activity#com.example.android.navigationdrawerexample.SearchableActivity
+activity#com.example.android.indoornavigation.activities.SearchableActivity
 ADDED from AndroidManifest.xml:52:9
 	android:name
 		ADDED from AndroidManifest.xml:52:19
@@ -99,7 +99,7 @@ ADDED from AndroidManifest.xml:56:13
 		ADDED from AndroidManifest.xml:57:17
 	android:name
 		ADDED from AndroidManifest.xml:56:24
-activity#com.example.android.navigationdrawerexample.NavigationActivity
+activity#com.example.android.indoornavigation.activities.NavigationActivity
 ADDED from AndroidManifest.xml:60:9
 	android:name
 		ADDED from AndroidManifest.xml:60:19

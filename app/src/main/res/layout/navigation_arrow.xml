@@ -4,13 +4,13 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <com.example.android.navigationdrawerexample.NavigationView
+    <com.example.android.indoornavigation.customviews.NavigationView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/naviPfeil"
         android:layout_width="100dip"
         android:layout_height="100dip"
         android:gravity="center" >
-    </com.example.android.navigationdrawerexample.NavigationView>
+    </com.example.android.indoornavigation.customviews.NavigationView>
 
     <TextView
         android:id="@+id/entfernung"
