@@ -20,6 +20,14 @@ android {
 
 dependencies {
     compile 'com.android.support:support-v4:21.0.3'
+
+    // osm MapView
     compile 'org.osmdroid:osmdroid-android:4.2'
     compile 'org.slf4j:slf4j-simple:1.6.1'
+
+    // compile 'de.fhaachen.navi:data-objects:1.0-SNAPSHOT'
+
+    // JSON serialization
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.4.3'
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-guava:2.4.3'
 }

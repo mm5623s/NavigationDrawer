@@ -240,9 +240,7 @@ public class MainActivity extends Activity {
         Fragment fragment = null;
         FragmentManager fragmentManager;
 
-        if(position==1) {
-            createCustomDialog();
-        } else if (position==3) {
+        if (position==3) {
             // CursorLoaderListFragment cursorLoaderListFragment = new CursorLoaderListFragment();
             // fragmentManager = getFragmentManager();
             // fragmentManager.beginTransaction().replace(android.R.id.content, cursorLoaderListFragment).commit();
@@ -252,12 +250,20 @@ public class MainActivity extends Activity {
         }
         else {
             if(position==0) {
-                fragment = new MapFragment();
+                fragment = new OSMDroidMapFragment();
                 Bundle args = new Bundle();
-                args.putString(MapFragment.URL, "http://www.openstreetmap.org/#map=18/50.93699/6.37461");
+                args.putInt("status", 0);
+                fragment.setArguments(args);
+            } else if(position==1) {
+                fragment = new OSMDroidMapFragment();
+                Bundle args = new Bundle();
+                args.putInt("status", 1);
                 fragment.setArguments(args);
             } else if(position==2) {
                 fragment = new OSMDroidMapFragment();
+                Bundle args = new Bundle();
+                args.putInt("status", 2);
+                fragment.setArguments(args);
             }
 
             fragmentManager = getFragmentManager();
@@ -332,7 +338,6 @@ public class MainActivity extends Activity {
     public static class OSMDroidMapFragment extends Fragment {
 
         public OSMDroidMapFragment() {
-
         }
 
         @Override
@@ -361,26 +366,54 @@ public class MainActivity extends Activity {
 
             map.setTileSource(tileSource);
 
-//            Adding Markers to the MapView using Overlays to visualize a position (location of user or room for example)
-            ArrayList<OverlayItem> overlayItemArray = new ArrayList<OverlayItem>();
-            overlayItemArray.add(new OverlayItem("FH Juelich", "FH Juelich", new GeoPoint(50.93595, 6.37408)));
-            overlayItemArray.add(new OverlayItem("Mensa", "Mensa", new GeoPoint(50.93573, 6.37337)));
-            overlayItemArray.add(new OverlayItem("Bibliothek", "Bibliothek", new GeoPoint(50.93536, 6.37428)));
+            Bundle args = getArguments();
+            int status = args.getInt("status");
 
-            ItemizedIconOverlay<OverlayItem> itemItemizedIconOverlay = new ItemizedIconOverlay<OverlayItem>(MainActivity.getAppContext(), overlayItemArray, null);
+            if(status==0) {
+                // no Markers and no PathOverlay
+            } else if (status == 1) {
+                // adding Markers and PathOverlay for route from 01C03 to Mensa
+//              Adding Markers to the MapView using Overlays to visualize a position (location of user or room for example)
+                ArrayList<OverlayItem> overlayItemArray = new ArrayList<OverlayItem>();
+                overlayItemArray.add(new OverlayItem("FH Juelich", "01 C 03", new GeoPoint(50.93678, 6.37408)));
+                overlayItemArray.add(new OverlayItem("Mensa", "Mensa", new GeoPoint(50.93573, 6.37337)));
 
-            map.getOverlays().add(itemItemizedIconOverlay);
+                ItemizedIconOverlay<OverlayItem> itemItemizedIconOverlay = new ItemizedIconOverlay<OverlayItem>(MainActivity.getAppContext(), overlayItemArray, null);
 
-//            Adding PathOverlay to the MapView to visualize a route
-            PathOverlay myPath = new PathOverlay(Color.RED, MainActivity.getAppContext());
-            myPath.addPoint(new GeoPoint(50.93595, 6.37408));
-            myPath.addPoint(new GeoPoint(50.93602, 6.37404));
-            myPath.addPoint(new GeoPoint(50.93673, 6.37433));
-            myPath.addPoint(new GeoPoint(50.93676, 6.37429));
-            myPath.addPoint(new GeoPoint(50.93680, 6.37409));
-            myPath.addPoint(new GeoPoint(50.93678, 6.37408));
+                map.getOverlays().add(itemItemizedIconOverlay);
 
-            map.getOverlays().add(myPath);
+//              Adding PathOverlay to the MapView to visualize a route
+                PathOverlay myPath = new PathOverlay(Color.RED, MainActivity.getAppContext());
+                myPath.addPoint(new GeoPoint(50.93595, 6.37408));
+                myPath.addPoint(new GeoPoint(50.93602, 6.37404));
+                myPath.addPoint(new GeoPoint(50.93673, 6.37433));
+                myPath.addPoint(new GeoPoint(50.93676, 6.37429));
+                myPath.addPoint(new GeoPoint(50.93680, 6.37409));
+                myPath.addPoint(new GeoPoint(50.93678, 6.37408));
+
+                map.getOverlays().add(myPath);
+            } else {
+                // adding Markes and PathOverlay for route from Entry to 01C03
+//              Adding Markers to the MapView using Overlays to visualize a position (location of user or room for example)
+                ArrayList<OverlayItem> overlayItemArray = new ArrayList<OverlayItem>();
+                overlayItemArray.add(new OverlayItem("FH Juelich", "Entry", new GeoPoint(50.93595, 6.37408)));
+                overlayItemArray.add(new OverlayItem("FH Juelich", "01 C 03", new GeoPoint(50.93678, 6.37408)));
+
+                ItemizedIconOverlay<OverlayItem> itemItemizedIconOverlay = new ItemizedIconOverlay<OverlayItem>(MainActivity.getAppContext(), overlayItemArray, null);
+
+                map.getOverlays().add(itemItemizedIconOverlay);
+
+//              Adding PathOverlay to the MapView to visualize a route
+                PathOverlay myPath = new PathOverlay(Color.RED, MainActivity.getAppContext());
+                myPath.addPoint(new GeoPoint(50.93595, 6.37408));
+                myPath.addPoint(new GeoPoint(50.93602, 6.37404));
+                myPath.addPoint(new GeoPoint(50.93673, 6.37433));
+                myPath.addPoint(new GeoPoint(50.93676, 6.37429));
+                myPath.addPoint(new GeoPoint(50.93680, 6.37409));
+                myPath.addPoint(new GeoPoint(50.93678, 6.37408));
+
+                map.getOverlays().add(myPath);
+            }
 
             return map;
         }

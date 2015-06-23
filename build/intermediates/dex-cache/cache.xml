@@ -2,46 +2,81 @@
 <items version="2" >
 
     <item
-        jar="/home/mm5623s/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-b6ca6954fbe9548acaf2453d941caf0c706ed95c.jar" />
-    </item>
-    <item
-        jar="/home/mm5623s/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.6.1/58e59bfb3e247097b8122243b3bfe0049c8cfae8/slf4j-simple-1.6.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="58e59bfb3e247097b8122243b3bfe0049c8cfae8">
-        <dex dex="/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/build/intermediates/pre-dexed/debug/slf4j-simple-1.6.1-4f71f5aebb46dd08b995610d994299fa4512e20e.jar" />
-    </item>
-    <item
-        jar="/home/mm5623s/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.6.1/6f3b8a24bf970f17289b234284c94f43eb42f0e4/slf4j-api-1.6.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="6f3b8a24bf970f17289b234284c94f43eb42f0e4">
-        <dex dex="/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/build/intermediates/pre-dexed/debug/slf4j-api-1.6.1-b3fec667f31c3c0357ea976fd063bcb3d113806f.jar" />
-    </item>
-    <item
-        jar="/home/mm5623s/.gradle/caches/modules-2/files-2.1/org.osmdroid/osmdroid-android/4.2/f3a0c73a9ed04a5d0959789c53da9f08462bfcc2/osmdroid-android-4.2.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f3a0c73a9ed04a5d0959789c53da9f08462bfcc2">
-        <dex dex="/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/build/intermediates/pre-dexed/debug/osmdroid-android-4.2-f7e62804a8557450c9483e3a5f40452f890fb45c.jar" />
-    </item>
-    <item
-        jar="/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/classes.jar"
+        jar="D:\MA\NavigationDrawer\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/build/intermediates/pre-dexed/debug/classes-f4f284d63e1e5a54375c2421050824f46d9c0210.jar" />
+        <dex dex="D:\MA\NavigationDrawer\app\build\intermediates\pre-dexed\debug\classes-1bc78f266d0afd5b8ae5f0eadee810c361d30b97.jar" />
     </item>
     <item
-        jar="/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/libs/internal_impl-21.0.3.jar"
+        jar="C:\Users\User\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.6.1\6f3b8a24bf970f17289b234284c94f43eb42f0e4\slf4j-api-1.6.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6f3b8a24bf970f17289b234284c94f43eb42f0e4">
+        <dex dex="D:\MA\NavigationDrawer\app\build\intermediates\pre-dexed\debug\slf4j-api-1.6.1-00f7a2ff56ffdb538d0198e60bedb6b7f958704d.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.datatype\jackson-datatype-guava\2.4.3\8095484cf266a4259805d270f2b2878e1056aad3\jackson-datatype-guava-2.4.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8095484cf266a4259805d270f2b2878e1056aad3">
+        <dex dex="D:\MA\NavigationDrawer\app\build\intermediates\pre-dexed\debug\jackson-datatype-guava-2.4.3-a65eec26931011dd257594e94e4872017efc0bcf.jar" />
+    </item>
+    <item
+        jar="D:\MA\NavigationDrawer\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\libs\internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/home/mm5623s/AndroidStudioProjects/NavigationDrawer/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-81f6b38e7ad84f8aa0ab655c7afc0b95dd3719eb.jar" />
+        <dex dex="D:\MA\NavigationDrawer\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-b49ea7c08bea6e01b8e23ca821814253bbf343be.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.4.3\4cb3dbb0c2f75b51aa7543c53252989785a0c609\jackson-core-2.4.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4cb3dbb0c2f75b51aa7543c53252989785a0c609">
+        <dex dex="D:\MA\NavigationDrawer\app\build\intermediates\pre-dexed\debug\jackson-core-2.4.3-64e0c2a33f1d0062ae3f8c77de38d3120e94b82f.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.4.3\feff63199be7b8f495c2f3e2096dcb6bd5e5b0b3\jackson-databind-2.4.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="feff63199be7b8f495c2f3e2096dcb6bd5e5b0b3">
+        <dex dex="D:\MA\NavigationDrawer\app\build\intermediates\pre-dexed\debug\jackson-databind-2.4.3-8c9ce15aaf9c4822ef5cfa543da512a71b1891a3.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="D:\MA\NavigationDrawer\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-7b13cb0991e0635c1f9fe8dd240c7bf3e938d93e.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\15.0\ed727a8d9f247e2050281cb083f1c77b09dcb5cd\guava-15.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ed727a8d9f247e2050281cb083f1c77b09dcb5cd">
+        <dex dex="D:\MA\NavigationDrawer\app\build\intermediates\pre-dexed\debug\guava-15.0-549606c4690bc461e8239c9307cab72e68a2e9d3.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.gradle\caches\modules-2\files-2.1\org.osmdroid\osmdroid-android\4.2\f3a0c73a9ed04a5d0959789c53da9f08462bfcc2\osmdroid-android-4.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f3a0c73a9ed04a5d0959789c53da9f08462bfcc2">
+        <dex dex="D:\MA\NavigationDrawer\app\build\intermediates\pre-dexed\debug\osmdroid-android-4.2-373367c674c47e0bf2130b5fd866564b7f75e9d3.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-simple\1.6.1\58e59bfb3e247097b8122243b3bfe0049c8cfae8\slf4j-simple-1.6.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="58e59bfb3e247097b8122243b3bfe0049c8cfae8">
+        <dex dex="D:\MA\NavigationDrawer\app\build\intermediates\pre-dexed\debug\slf4j-simple-1.6.1-71878d3f9650408517ab0dde7a6c4507df538267.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.4.0\d6a66c7a5f01cf500377bd669507a08cfeba882a\jackson-annotations-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d6a66c7a5f01cf500377bd669507a08cfeba882a">
+        <dex dex="D:\MA\NavigationDrawer\app\build\intermediates\pre-dexed\debug\jackson-annotations-2.4.0-a4850286bbff21e147f3ac513c693c740a26832e.jar" />
     </item>
 
 </items>
